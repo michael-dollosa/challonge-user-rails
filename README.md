@@ -21,8 +21,8 @@ Or install it yourself as:
 
 ## Usage
 
-###Get an API Token from Challonge site
-Create an account on https://challonge.com/ and get an API via Settings - Developer API.
+### Get an API Token from Challonge site
+Create an account on [Challonge Website](https://challonge.com) and get an API via Settings - Developer API.
 
 ### Configure
 It is suggested to create an instance of the client.
