@@ -44,6 +44,27 @@ Tournament URL is the URL parameter (not the address) of the tournament when you
 client.tournament(tournament_url)
 ```
 
+### Delete Tournament
+```ruby
+client.delete_tournament(tournament_url)
+```
+
+### Create Tournament
+Challonge API expects a json data with attributes related to creation of a tournament. You may refer to their [docs](https://api.challonge.com/v2/api_docs/single_swagger_doc#!/Tournament/createTournament) for an example json value.
+```ruby
+client.create_tournament(data)
+```
+
+### Get All Matches
+```ruby
+client.matches
+```
+
+### Get Tournament Matches
+```ruby
+client.match(tournament_url, match_id)
+```
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/michael-dollosa/challonge_user_rails. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/michael-dollosa/challonge_user_rails/blob/master/CODE_OF_CONDUCT.md).
