@@ -4,6 +4,7 @@ require "faraday_middleware"
 module ChallongeUserRails
   class Client
     BASE_URL = "https://api.challonge.com/v2/"
+
     attr_reader :api_key, :adapter
 
     def initialize(api_key:, adapter: Faraday.default_adapter )
@@ -21,6 +22,7 @@ module ChallongeUserRails
         conn.headers['Accept'] = 'application/json'
         conn.headers['Authorization-Type'] = 'v1'
         conn.headers['Authorization'] = @api_key
+        conn.use Faraday::Response::RaiseError
       end
     end
 
@@ -28,32 +30,50 @@ module ChallongeUserRails
 
     #get all tournaments from user account
     def tournaments
-      res = connection.get("tournaments.json").body
+      response = connection.get("tournaments.json")
+      { code: response.status, status: '200 Success', data: response.body }
+    rescue Faraday::ClientError => err
+      { code: err.response[:status], status: err.response[:headers][:status], data: JSON.parse(err.response[:body])["errors"]["detail"] }
     end
 
     #get specific tournament via slug/url
     def tournament(slug)
-      connection.get("tournaments/#{slug}.json").body
+      response = connection.get("tournaments/#{slug}.json")
+      { code: response.status, status: '200 Success', data: response.body }
+    rescue Faraday::ClientError => err
+      { code: err.response[:status], status: err.response[:headers][:status], data: JSON.parse(err.response[:body])["errors"]["detail"] }
     end
 
     #get all matches of specific tournament
     def matches(slug)
-      connection.get("tournaments/#{slug}/matches.json").body
+      response = connection.get("tournaments/#{slug}/matches.json")
+      { code: response.status, status: '200 Success', data: response.body }
+    rescue Faraday::ClientError => err
+      { code: err.response[:status], status: err.response[:headers][:status], data: JSON.parse(err.response[:body])["errors"]["detail"] }
     end
 
     #get specific match
     def match(slug, id)
-      connection.get("tournaments/#{slug}/matches/#{id}.json").body
+      response = connection.get("tournaments/#{slug}/matches/#{id}.json")
+      { code: response.status, status: '200 Success', data: response.body }
+    rescue Faraday::ClientError => err
+      { code: err.response[:status], status: err.response[:headers][:status], data: JSON.parse(err.response[:body])["errors"]["detail"] }
     end
 
     #create tournament
     def create_tournament(data)
-      connection.post("tournaments.json", data).body
+      response = connection.post("tournaments.json", data)
+      { code: response.status, status: '200 Success', data: response.body }
+    rescue Faraday::ClientError => err
+      { code: err.response[:status], status: err.response[:headers][:status], data: JSON.parse(err.response[:body])["errors"]["detail"] }
     end
 
     #delete tournament
     def delete_tournament(slug)
-      connection.delete("tournaments/#{slug}.json").body
+      response = connection.delete("tournaments/#{slug}.json")
+      { code: response.status, status: '200 Success', data: response.body }
+    rescue Faraday::ClientError => err
+      { code: err.response[:status], status: err.response[:headers][:status], data: JSON.parse(err.response[:body])["errors"]["detail"] }
     end
 
     #change once deployed
