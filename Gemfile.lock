@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    challonge_user_rails (0.1.0)
+    challonge_user_rails (0.1.1)
       faraday (~> 1.7)
       faraday_middleware (~> 1.1)
 
@@ -56,4 +56,4 @@ DEPENDENCIES
   rspec (~> 3.0)
 
 BUNDLED WITH
-   2.1.4
+   2.2.27
