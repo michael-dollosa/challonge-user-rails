@@ -6,8 +6,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Christian Michael Dollosa"]
   spec.email         = ["dollosa.christian@gmail.com"]
 
-  spec.summary       = %q{This is a simple API wrapper for Challong API users.}
-  spec.description   = %q{Used for Avion Project using api wrappers.}
+  spec.summary       = %q{This is a simple API wrapper for Challonge API users.}
+  spec.description   = %q{This is a simple API wrapper for Challonge API.}
   spec.homepage      = "https://github.com/michael-dollosa/challonge-user-rails"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")

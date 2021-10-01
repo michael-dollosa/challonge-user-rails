@@ -76,6 +76,5 @@ module ChallongeUserRails
       { code: err.response[:status], status: err.response[:headers][:status], data: JSON.parse(err.response[:body])["errors"]["detail"] }
     end
 
-    
   end
 end
