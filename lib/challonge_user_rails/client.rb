@@ -31,7 +31,7 @@ module ChallongeUserRails
     #get all tournaments from user account
     def tournaments
       response = connection.get("tournaments.json")
-      { code: response.status, status: '200 Success', data: response.body }
+      { code: response.status, status: 'success', data: response.body }
     rescue Faraday::ClientError => err
       { code: err.response[:status], status: err.response[:headers][:status], data: JSON.parse(err.response[:body])["errors"]["detail"] }
     end
@@ -39,7 +39,7 @@ module ChallongeUserRails
     #get specific tournament via slug/url
     def tournament(slug)
       response = connection.get("tournaments/#{slug}.json")
-      { code: response.status, status: '200 Success', data: response.body }
+      { code: response.status, status: 'success', data: response.body }
     rescue Faraday::ClientError => err
       { code: err.response[:status], status: err.response[:headers][:status], data: JSON.parse(err.response[:body])["errors"]["detail"] }
     end
@@ -47,7 +47,7 @@ module ChallongeUserRails
     #get all matches of specific tournament
     def matches(slug)
       response = connection.get("tournaments/#{slug}/matches.json")
-      { code: response.status, status: '200 Success', data: response.body }
+      { code: response.status, status: 'success', data: response.body }
     rescue Faraday::ClientError => err
       { code: err.response[:status], status: err.response[:headers][:status], data: JSON.parse(err.response[:body])["errors"]["detail"] }
     end
@@ -55,7 +55,7 @@ module ChallongeUserRails
     #get specific match
     def match(slug, id)
       response = connection.get("tournaments/#{slug}/matches/#{id}.json")
-      { code: response.status, status: '200 Success', data: response.body }
+      { code: response.status, status: 'success', data: response.body }
     rescue Faraday::ClientError => err
       { code: err.response[:status], status: err.response[:headers][:status], data: JSON.parse(err.response[:body])["errors"]["detail"] }
     end
@@ -63,7 +63,7 @@ module ChallongeUserRails
     #create tournament
     def create_tournament(data)
       response = connection.post("tournaments.json", data)
-      { code: response.status, status: '200 Success', data: response.body }
+      { code: response.status, status: 'success', data: response.body }
     rescue Faraday::ClientError => err
       { code: err.response[:status], status: err.response[:headers][:status], data: JSON.parse(err.response[:body])["errors"]["detail"] }
     end
@@ -71,7 +71,7 @@ module ChallongeUserRails
     #delete tournament
     def delete_tournament(slug)
       response = connection.delete("tournaments/#{slug}.json")
-      { code: response.status, status: '200 Success', data: response.body }
+      { code: response.status, status: 'success', data: response.body }
     rescue Faraday::ClientError => err
       { code: err.response[:status], status: err.response[:headers][:status], data: JSON.parse(err.response[:body])["errors"]["detail"] }
     end
