@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe "Tournament Endpoints" do
+RSpec.describe "Matches Endpoints" do
   before(:each) do
     @client = ChallongeUserRails::Client.new(api_key: "Bu1jqfn2whgYiS2uOeD4iiTf25P2amiyuxLhHMKZ")
   end
