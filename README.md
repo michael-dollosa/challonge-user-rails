@@ -25,7 +25,7 @@ Or install it yourself as:
 Create an account on [Challonge Website](https://challonge.com) and get an API via Settings - Developer API.
 
 ### Configure
-It is suggested to create an instance of the client.
+Instance of the client must be done first before being able to use the API.
 
 ```ruby
 client = ChallongeUserRails::Client.new(api_key: [YOUR API KEY])
