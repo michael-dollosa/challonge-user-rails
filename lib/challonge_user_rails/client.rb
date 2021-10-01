@@ -76,9 +76,6 @@ module ChallongeUserRails
       { code: err.response[:status], status: err.response[:headers][:status], data: JSON.parse(err.response[:body])["errors"]["detail"] }
     end
 
-    #change once deployed
-    def inspect
-      "#<ChallongUserAPI::Client>"
-    end
+    
   end
 end

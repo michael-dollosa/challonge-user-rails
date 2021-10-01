@@ -10,7 +10,5 @@ require "challonge_user_rails"
 # require "pry"
 # Pry.start
 
-client = ChallongeUserRails::Client.new(api_key: "Bu1jqfn2whgYiS2uOeD4iiTf25P2amiyuxLhHMKZ")
-
 require "irb"
 IRB.start(__FILE__)
