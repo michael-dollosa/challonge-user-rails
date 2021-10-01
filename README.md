@@ -55,12 +55,12 @@ Challonge API expects a json data with attributes related to creation of a tourn
 client.create_tournament(data)
 ```
 
-### Get All Matches
+### Get All Matches of a Tournament
 ```ruby
-client.matches
+client.matches(tournament_url)
 ```
 
-### Get Tournament Matches
+### Get a specific Tournament Match
 ```ruby
 client.match(tournament_url, match_id)
 ```
