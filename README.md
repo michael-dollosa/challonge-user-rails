@@ -64,6 +64,8 @@ client.matches(tournament_url)
 ```ruby
 client.match(tournament_url, match_id)
 ```
+## Sample Repository using this Gem
+Check this [repo](https://github.com/michael-dollosa/challonge-user-rails) to see how this gem is used.
 
 ## Contributing
 
