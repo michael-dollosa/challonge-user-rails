@@ -25,7 +25,7 @@ Or install it yourself as:
 Create an account on [Challonge Website](https://challonge.com) and get an API via Settings - Developer API.
 
 ### Configure
-Instance of the client must be done first before being able to use the API.
+Instance of the client must be done first before being able to use the API. You may check Rails [docs](https://guides.rubyonrails.org/security.html#custom-credentials) to setup your API key via credentials.yml.
 
 ```ruby
 client = ChallongeUserRails::Client.new(api_key: [YOUR API KEY])
